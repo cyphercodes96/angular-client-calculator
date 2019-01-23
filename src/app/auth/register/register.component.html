@@ -1,0 +1,95 @@
+<div class="row justify-content-md-center" id="loginDiv" style="position: sticky; top:25%">
+  <div class="col-md-6">
+    <h2 style="text-align: center">Member Registration</h2>
+    <br>
+    <form #f="ngForm" (ngSubmit)="onSubmit()" name="form" novalidate
+          style="background: #e4e4e4;
+                                                    max-width: 400px;
+                                                    margin: 0 auto; border: 1px solid cyan;
+                                                    border-radius: 25px;
+                                                    padding: 25px;">
+      <div *ngIf="f.submitted && !f.form.valid"
+           class="alert alert-danger">
+        This form has some errors!
+      </div>
+      <div [ngClass]="{ 'has-error': f.submitted && !first_name.valid }"
+           class="form-group">
+        <label for="email">First Name</label>
+        <input
+          #first_name="ngModel"
+          [(ngModel)]="userNgModel.first_name"
+          autocomplete
+          class="form-control"
+          name="email"
+          style="border-radius: 25px;"
+          type="text"/>
+      </div>
+      <div [ngClass]="{ 'has-error': f.submitted && !middle_name.valid }"
+           class="form-group">
+        <label for="email">Middle Name</label>
+        <input
+          #middle_name="ngModel"
+          [(ngModel)]="userNgModel.middle_name"
+          autocomplete
+          class="form-control"
+          name="email"
+          style="border-radius: 25px;"
+          type="text"/>
+      </div>
+      <div [ngClass]="{ 'has-error': f.submitted && !last_name.valid }"
+           class="form-group">
+        <label for="email">Last Name</label>
+        <input
+          #last_name="ngModel"
+          [(ngModel)]="userNgModel.last_name"
+          autocomplete
+          class="form-control"
+          name="email"
+          style="border-radius: 25px;"
+          type="text"/>
+      </div>
+      <div [ngClass]="{ 'has-error': f.submitted && !email.valid }"
+           class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          #email="ngModel"
+          [(ngModel)]="userNgModel.email"
+          autocomplete
+          class="form-control"
+          id="email"
+          name="email"
+          required
+          style="border-radius: 25px;"
+          type="text"/>
+        <div *ngIf="f.submitted && !email.valid"
+             class="help-block">Email is required
+        </div>
+      </div>
+      <div [ngClass]="{ 'has-error': f.submitted && !password.valid }"
+           class="form-group">
+        <label for="password">Password</label>
+        <input
+          #password="ngModel"
+          [(ngModel)]="userNgModel.password"
+          autocomplete
+          class="form-control"
+          id="password"
+          name="password"
+          required
+          style="border-radius: 25px;"
+          type="password"/>
+      </div>
+      <br>
+      <div class="form-group">
+        <button [disabled]="!f.valid"
+                class="btn btn-primary" style="float: right; border-radius: 25px"
+                type="submit">Submit
+        </button>
+      </div>
+      <div class="wrapper">
+        <a routerLink="/login">Already have an account?</a>
+      </div>
+    </form>
+  </div>
+</div>
+

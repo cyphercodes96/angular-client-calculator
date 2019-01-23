@@ -1,0 +1,73 @@
+<div class="row justify-content-md-center" id="loginDiv" style="position: sticky; top:25%">
+  <div class="col-md-6">
+    <h2 style="text-align: center">Member Login</h2>
+    <br>
+    <div *ngIf="checkTime()" class="alert alert-danger">
+      Please try logging in again after {{auth.time_remaining}} seconds...
+    </div>
+    <form #f="ngForm" (ngSubmit)="onSubmit()" name="form" novalidate
+          style="background: #e4e4e4;
+                                                    max-width: 400px;
+                                                    margin: 0 auto; border: 1px solid cyan;
+                                                    border-radius: 25px;
+                                                    padding: 25px;">
+      <div *ngIf="f.submitted && !f.form.valid && !auth.block"
+           class="alert alert-danger">
+        This form has some errors!
+      </div>
+      <div [ngClass]="{ 'has-error': f.submitted && !email.valid }"
+           class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          #email="ngModel"
+          [(ngModel)]="userPost.email"
+          [disabled]="auth.block"
+          autocomplete
+          class="form-control"
+          id="email"
+          name="email"
+          required
+          style="border-radius: 25px;"
+          type="text"/>
+        <!--
+                  [(ngModel)]="username"
+        -->
+        <div *ngIf="f.submitted && !email.valid"
+             class="help-block">Email is required
+        </div>
+      </div>
+      <div [ngClass]="{ 'has-error': f.submitted && !password.valid }"
+           class="form-group">
+        <label for="password">Password</label>
+        <input
+          #password="ngModel"
+          [(ngModel)]="userPost.password"
+          [disabled]="auth.block"
+          autocomplete
+          class="form-control"
+          id="password"
+          name="password"
+          required
+          style="border-radius: 25px;"
+          type="password"/>
+      </div>
+      <br>
+      <div class="form-group">
+        <button [disabled]="!f.valid || checkTime() "
+                class="btn btn-primary" style="float: right; border-radius: 25px"
+                type="submit">Submit
+        </button>
+      </div>
+      <div class="wrapper">
+        <a routerLink="/reset">Forgotten your password?</a>
+        <div *ngIf="f.submitted && !password.valid"
+             class="help-block">Password is required
+        </div>
+      </div>
+      <div class="wrapper">
+        <a routerLink="/register">Register Now!</a>
+      </div>
+    </form>
+  </div>
+</div>
+

@@ -1,1 +1,177 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+html, body {
+  margin: 0;
+  font-size: 14px;
+  padding: 0;
+  overflow: scroll !important;
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+div[ng-view] {
+  height: 100% !important;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+input {
+  border-radius: 25px !important;
+  text-align: center;
+  width: 100% !important;
+}
+
+input[type="date"] {
+  text-transform: uppercase;
+}
+
+input[type="checkbox"] {
+  width: unset !important;
+}
+
+.ngx-select__toggle.btn.form-control {
+  border-radius: 25px !important;
+}
+
+ul.ngx-select__choices.dropdown-menu.show {
+  border-radius: 25px !important;
+}
+
+.borderBox {
+  border: 0px solid black;
+  padding: 5px;
+  background-clip: padding-box;
+  margin-left: 20px;
+}
+
+button {
+  border-radius: 10px !important;
+}
+
+.col-md-3 {
+  margin: 1pc 30px 1px 30px;
+}
+
+label {
+  margin-left: 10px;
+}
+
+.nsm-dialog.nsm-dialog-animation-fade.nsm-dialog-open {
+  top: 25% !important;
+}
+
+.nsm-content {
+  left: 35px;
+}
+
+@media only screen and (max-width: 1087px) {
+  div#sideBar {
+    width: 4em;
+    max-width: 4em !important;
+  }
+
+  nav.s-sidebar__nav {
+    overflow: auto !important;
+  }
+
+  div#bodyContent {
+    margin: 0;
+    padding: 0;
+    overflow: scroll !important;
+    min-width: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+  }
+
+  .s-sidebar__trigger:hover ~ .s-sidebar__nav,
+  .s-sidebar__trigger:focus ~ .s-sidebar__nav {
+    max-width: 21% !important;
+    width: 13em;
+  }
+
+  div#sideBar:hover,
+  div#sideBar:focus {
+    max-width: 21% !important;
+    width: 11em !important;
+  }
+
+  div#sideBar:hover .s-sidebar__nav,
+  div#sideBar:focus .s-sidebar__nav {
+    max-width: 21% !important;
+    width: 11em !important;
+  }
+}
+
+@media (max-width: 42em) {
+  div#sideBar {
+    width: 0em !important;
+    max-width: 0% !important;
+  }
+
+  div#bodyContent {
+    max-width: 100% !important;
+  }
+
+  .s-sidebar__trigger:hover ~ .s-sidebar__nav,
+  .s-sidebar__trigger:focus ~ .s-sidebar__nav {
+    max-width: 21% !important;
+    width: 11em;
+  }
+
+  div#sideBar:hover,
+  div#sideBar:focus {
+    max-width: 44% !important;
+    width: 13em !important;
+  }
+
+  div#sideBar:hover .s-sidebar__nav,
+  div#sideBar:focus .s-sidebar__nav {
+    max-width: 12.8em !important;
+    width: 12.8em !important;
+  }
+
+}
+
+.nsm-content {
+  height: 350px;
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+textarea {
+  background: white;
+}
+
+body.swal2-shown.swal2-height-auto {
+  height: 100% !important;
+}
+
+span.ngx-select__placeholder.text-muted {
+  color: #e4e4e4 !important;
+}
+
+::placeholder {
+  color: #e4e4e4 !important;
+}
+
+select#selectControl {
+  border-radius: 25px !important;
+}
+
+.backdrop {
+  height: 100% !important;
+  position: fixed !important;
+}

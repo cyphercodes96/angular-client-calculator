@@ -1,0 +1,34 @@
+<button (click)="setTodayReport()" class="btn-primary" type="button">Today's report</button>&nbsp;
+<button type="button" class="btn-primary" (click)="setWeeklyReport()">This Week's report</button>&nbsp;
+<button type="button" class="btn-primary" (click)="setMonthlyReport()">This Month's report</button>&nbsp;
+<button type="button" class="btn-primary" *ngIf="!customPicking" (click)="triggerCustomDatePickerOn()">Custom Date
+  Picker
+</button>
+<button type="button" class="btn-primary" *ngIf="customPicking" (click)="triggerCustomDatePickerOff()">Hide Custom Date
+  Picker
+</button>&nbsp;
+<br><br>
+<div class="example-wrapper" *ngIf="customPicking">
+  <h2>Range Selection</h2>
+
+  <label class="example-input-wrapper">
+    Date Time:
+    <input placeholder="Date Time Range:"
+           [style.width]="'350px'"
+           [(ngModel)]="dateTimeRange"
+           [selectMode]="'range'"
+           (ngModelChange)="dateRangeSelected()"
+           [owlDateTimeTrigger]="dtRange1" [owlDateTime]="dtRange1">
+    <owl-date-time #dtRange1></owl-date-time>
+  </label>
+</div>
+<br>
+<div class="container" style="display: table-cell;" *ngIf="operations.length > 0">
+  <div class="row" *ngFor="let i of operations">
+    <!--<p>{{i.number0 + ' ' + i.operator + ' ' + i.number1 + ' = ' + i.result + ' || Date & Time: '}}-->
+    <!--{{i.created_ts | date :'dd-MMM-yy h:mm:ss a'}}</p>-->
+    <p><span *ngIf="i.number0">{{i.number0 + ' '}}</span>{{i.operator + ' '}} <span
+      *ngIf="i.number1">{{i.number1 + ' '}}</span>{{'= ' + i.result + ' || Date & Time: '}}{{i.created_ts | date :'dd-MMM-yy h:mm:ss a'}}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="s-layout__sidebar">
+  <nav class="s-sidebar__nav">
+    <ul>
+      <p style="color: #4c4c4c; text-align: center;">TransferTo Calculator</p>
+      <li [ngClass]="{'active-link-font': router.url.includes('calculator')}">
+        <a (click)="onPatientsClicked()" [routerLinkActiveOptions]="{exact: true}" class="s-sidebar__nav-link"
+           routerLink="/calculator" routerLinkActive="active-link-font">
+          <i aria-hidden="true" class="fa fa-home"></i>
+          <em>Calculator</em>
+        </a>
+      </li>
+      <li [ngClass]="{'active-link-font': router.url.includes('report')}">
+        <a (click)="onPatientsClicked()" [routerLinkActiveOptions]="{exact: true}" class="s-sidebar__nav-link"
+           routerLink="/reports" routerLinkActive="active-link-font">
+          <i aria-hidden="true" class="fa fa-home"></i>
+          <em>Reports</em>
+        </a>
+      </li>
+      <li routerLinkActive="active-link-font">
+        <a (click)="auth.logout()" [routerLinkActiveOptions]="{exact: true}" class="s-sidebar__nav-link"
+           routerLink="/login"
+           routerLinkActive="active-link-font">
+          <i class="fa fa-sign-out"></i><em>Logout</em>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+

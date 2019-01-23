@@ -1,0 +1,20 @@
+run.config:
+  engine: nodejs
+  engine.config:
+    runtime: nodejs-10.4.1
+    python_version: python-3.5
+  cache_dirs:
+    - node_modules
+  extra_path_dirs:
+    - node_modules/.bin
+  extra_packages:
+    - nginx
+    - phantomjs-2.1.1
+  extra_steps:
+    - npm install
+deploy.config:
+  extra_steps:
+    - ng build --prod
+web.main:
+  start:
+    nginx: nginx -c /app/config/nginx.conf
