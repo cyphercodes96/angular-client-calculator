@@ -1,13 +1,17 @@
 {
-  "name": "untitled",
+  "name": "app1",
   "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 3326 --host 0.0.0.0 --disable-host-check",
+    "start": "ng serve --port 3325 --host 0.0.0.0 --disable-host-check",
     "build": "ng build --prod",
     "test": "ng test",
+    "test:ci": "cd node_modules && .bin/karma start --single-run --browsers Chrome",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "gulp": "gulp",
+    "minify": "gulp minify"
   },
   "private": true,
   "dependencies": {
@@ -27,7 +31,7 @@
     "jquery": "^3.3.1",
     "js-sha512": "^0.8.0",
     "jwt-decode": "^2.2.0",
-    "ng-pick-datetime": "^7.0.0",
+    "ng-pick-datetime": "^6.0.16",
     "ngx-cookie-service": "^2.1.0",
     "ngx-loading": "^3.0.1",
     "rxjs": "^6.3.2",
