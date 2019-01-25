@@ -36,8 +36,19 @@ export class CalcComponent implements OnInit {
         this.operate(e.key);
       } else if (e.key.match('\\d') || e.key === '.') {
         this.updateOutput(e.key);
-      } else if (e.key === 'Enter' && e.code === 'NumpadEnter') {
+      } else if (e.key === 'Enter') {
         this.equal();
+      } else if (e.key === 'Escape') {
+        this.clear();
+      } else if (e.key === 'Backspace') {
+        if (this.output.length === 0) {
+          this.operator = null;
+        } else {
+          this.output = this.output.slice(0, -1);
+          if (this.output.length === 0 && this.operator) {
+            this.output = this.operator;
+          }
+        }
       }
 
     };
