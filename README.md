@@ -78,3 +78,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 https://personal-calc-client.nanoapp.io/calculator
 
 # Live CI / CD Using Semaphore: #
+https://www.useloom.com/share/5d1e715ec99f4a5c904c07d46962dbb9
